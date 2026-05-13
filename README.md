@@ -52,13 +52,6 @@ voicebot/
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.8+
-- A [Twilio account](https://www.twilio.com/try-twilio) (free to sign up)
-- A Twilio phone number with **Voice** capability
 
 ### 1. Clone the Repository
 
@@ -105,10 +98,6 @@ SECRET_KEY=make_up_any_random_string_here
 ### 5. Run the Server
 
 ```bash
-# Option A — One-click launcher
-python run.py
-
-# Option B — Manual
 source venv/bin/activate   # Mac/Linux
 # venv\Scripts\activate    # Windows
 python backend/app.py
@@ -197,91 +186,3 @@ Click **"Export Results"** to download an updated Excel file containing:
 | Google Fonts (Inter) | Typography |
 
 ---
-
-## ⚠️ Twilio Trial Account Limitations
-
-| Limitation | Solution |
-|---|---|
-| Can only call verified numbers | Verify numbers in Twilio Console or upgrade |
-| "Trial account" voice message on calls | Upgrade to a paid account to remove |
-| Max 5 verified numbers | Upgrade for unlimited |
-| 10-minute call limit | Upgrade for unlimited |
-
-**How to upgrade (takes ~2 minutes):**
-
-1. Go to the [Twilio Console](https://console.twilio.com)
-2. Click **"Upgrade"** at the top
-3. Enter a payment method
-4. Add a $10–$20 starting balance
-
-All restrictions are removed and you receive 75 free voice minutes.
-
----
-
-## 🔧 Configuration
-
-### Environment Variables (`.env`)
-
-| Variable | Required | Description |
-|---|---|---|
-| `TWILIO_ACCOUNT_SID` | ✅ Yes | Your Twilio Account SID |
-| `TWILIO_AUTH_TOKEN` | ✅ Yes | Your Twilio Auth Token |
-| `TWILIO_PHONE_NUMBER` | ✅ Yes | Your Twilio phone number |
-| `SECRET_KEY` | ✅ Yes | Random string for Flask sessions |
-| `OPENAI_API_KEY` | ❌ Optional | For AI voice (advanced) |
-
-### App Settings (`backend/config.py`)
-
-| Setting | Default | Description |
-|---|---|---|
-| `CALL_DELAY_SECONDS` | `2` | Delay between consecutive calls |
-| `MAX_MESSAGE_LENGTH` | `500` | Max characters in message |
-
----
-
-## 🛠️ Tech Stack
-
-```
-Backend:   Python 3.8+ · Flask · SQLite · Twilio API
-Frontend:  HTML5 · CSS3 · Vanilla JavaScript
-Voice:     Twilio Programmable Voice · Amazon Polly TTS
-Data:      Pandas · OpenPyXL · PyPDF2
-```
-
----
-
-## 🐛 Troubleshooting
-
-| Problem | Solution |
-|---|---|
-| `CONFIG ERROR: Missing required config` | Check `.env` exists in root, not inside `backend/` |
-| 0 numbers detected from file | Use one number per line for `.txt` files |
-| Can only call verified numbers | Verify number in Twilio Console or upgrade account |
-| Message gets cut off | Remove special XML characters from your message |
-| Server won't start | Run `pip install -r backend/requirements.txt` again |
-
----
-
-## 📄 License
-
-[MIT License](LICENSE) — free for personal and commercial use.
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
----
-
-## 👤 Author
-
-**Your Name** — [LinkedIn](#) · [GitHub](#)
-
-<br>
-
-> Built with ❤️ for AI automation enthusiasts.
